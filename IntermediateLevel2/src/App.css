@@ -1,0 +1,527 @@
+/* #root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+} */
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  background-color: #f0f2f5;
+  font-family: Arial, sans-serif;
+}
+.navBarStyle{
+  width: 100%;
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+  box-sizing: border-box;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f5f5f5;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.LinkTag {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+
+}
+/* Page center */
+.LoginForm {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Card */
+.LoginForm form {
+  width: 360px;
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Title */
+.LoginForm h2 {
+  text-align: center;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+/* Input */
+.LoginForm input {
+  padding: 12px;
+  font-size: 14px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  transition: border-color 0.2s;
+}
+
+.LoginForm input:focus {
+  outline: none;
+  border-color: #4f46e5;
+}
+
+/* Error message */
+.error {
+  font-size: 12px;
+  color: #e11d48;
+}
+
+/* Success message */
+.success {
+  text-align: center;
+  font-size: 14px;
+  color: #16a34a;
+}
+
+/* Button */
+.LoginForm button {
+  margin-top: 10px;
+  padding: 12px;
+  background: #4f46e5;
+  color: white;
+  font-size: 15px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.LoginForm button:hover {
+  background: #4338ca;
+}
+
+.LoginForm button:disabled {
+  background: #a5b4fc;
+  cursor: not-allowed;
+}
+
+/* Shoping Chart css */
+* {
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+.cart-container {
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+h2 {
+  margin-bottom: 10px;
+}
+
+.products {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.product-card {
+  border: 1px solid #ccc;
+  padding: 15px;
+  width: 180px;
+  border-radius: 6px;
+  text-align: center;
+}
+
+.product-card button {
+  margin-top: 10px;
+  padding: 6px 10px;
+  cursor: pointer;
+}
+
+.cart-items {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 6px;
+}
+
+.quantity {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.quantity button {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.remove {
+  background-color: crimson;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.total {
+  margin-top: 20px;
+  text-align: right;
+}
+
+.empty {
+  color: gray;
+  font-style: italic;
+}
+
+
+/* Stop Watch css */
+
+/* Reset */
+* {
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Container */
+.stopwatch {
+  width: 320px;
+  margin: 60px auto;
+  padding: 25px;
+  border-radius: 12px;
+  background: #ffffff;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* Time display */
+.stopwatch h2 {
+  font-size: 2.6rem;
+  margin-bottom: 20px;
+  color: #222;
+  letter-spacing: 1px;
+}
+
+/* Buttons container */
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+/* Buttons */
+.controls button,
+.countdown button {
+  padding: 8px 14px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+
+/* Start / Stop */
+.controls button:first-child {
+  background: #4caf50;
+  color: white;
+}
+
+.controls button:first-child:hover {
+  background: #43a047;
+}
+
+/* Reset */
+.controls button:nth-child(2) {
+  background: #f44336;
+  color: white;
+}
+
+.controls button:nth-child(2):hover {
+  background: #e53935;
+}
+
+/* Lap */
+.controls button:nth-child(3) {
+  background: #2196f3;
+  color: white;
+}
+
+.controls button:nth-child(3):hover {
+  background: #1e88e5;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Countdown section */
+.countdown {
+  margin-top: 15px;
+}
+
+.countdown input {
+  width: 90px;
+  padding: 7px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  margin-right: 8px;
+  text-align: center;
+}
+
+.countdown button {
+  background: #673ab7;
+  color: white;
+}
+
+.countdown button:hover {
+  background: #5e35b1;
+}
+
+/* Divider */
+hr {
+  margin: 20px 0;
+  border: none;
+  border-top: 1px solid #eee;
+}
+
+/* Laps */
+.laps {
+  margin-top: 20px;
+  text-align: left;
+}
+
+.laps h3 {
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
+
+.laps p {
+  background: #f5f5f5;
+  padding: 6px 10px;
+  border-radius: 4px;
+  margin: 4px 0;
+  font-size: 0.9rem;
+}
+
+/* Model css */
+
+/* Backdrop */
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.3s ease;
+  z-index: 1000;
+}
+
+/* Modal box */
+.modal {
+  width: 400px;
+  background: white;
+  border-radius: 8px;
+  animation: slideDown 0.3s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+/* Header */
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background: #f5f5f5;
+}
+
+.modal-header h3 {
+  margin: 0;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+/* Body */
+.modal-body {
+  padding: 15px;
+}
+
+/* Footer */
+.modal-footer {
+  padding: 15px;
+  background: #f5f5f5;
+  text-align: right;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+
+/* Weather app css */
+
+* {
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+.weather-app {
+  max-width: 420px;
+  margin: 40px auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.search {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.search input {
+  flex: 1;
+  padding: 8px;
+}
+
+.search button {
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.unit-btn {
+  margin-bottom: 15px;
+  padding: 6px 10px;
+  cursor: pointer;
+}
+
+.current-weather {
+  background: #f5f5f5;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.temp {
+  font-size: 2.5rem;
+  margin: 10px 0;
+}
+
+.forecast-list {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+}
+
+.forecast-card {
+  background: #e3f2fd;
+  padding: 10px;
+  border-radius: 6px;
+  min-width: 120px;
+}
+
+.favorites {
+  margin-top: 20px;
+}
+
+.favorites button {
+  margin: 4px;
+  padding: 6px 10px;
+  cursor: pointer;
+}
+
+.error {
+  color: red;
+}
+
+.info {
+  color: gray;
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+  .forecast-list {
+    flex-direction: column;
+  }
+}
+
