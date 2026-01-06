@@ -43,7 +43,7 @@ export function Level3_4() {
     <div style={containerStyle}>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '2rem' }}>
         <div>
-          <Link to="/" style={{ color: themeStyles.primary, textDecoration: 'none' }}>← Back</Link>
+          <Link to="/level3.3" style={{ color: themeStyles.primary, textDecoration: 'none' }}>← Back to Level 3.3</Link>
           <h1 style={{ margin: '0.5rem 0' }}>DataTable Demo</h1>
         </div>
         <ThemeToggle />

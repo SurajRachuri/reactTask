@@ -137,24 +137,28 @@ function FormBuilder({ schema, onSubmit }) {
     }
 
     const fieldStyle = {
-      marginBottom: '1rem'
+      marginBottom: '2rem'
     };
 
     const labelStyle = {
       display: 'block',
-      marginBottom: '0.5rem',
-      fontWeight: '500',
-      color: themeStyles.text
+      marginBottom: '0.75rem',
+      fontWeight: '600',
+      color: themeStyles.text,
+      fontSize: '15px'
     };
 
     const inputStyle = {
       width: '100%',
-      padding: '0.75rem',
-      border: `1px solid ${errors[field.name] ? '#ef4444' : themeStyles.border}`,
-      borderRadius: '4px',
+      padding: '1rem',
+      border: `2px solid ${errors[field.name] ? '#ef4444' : themeStyles.border}`,
+      borderRadius: '8px',
       backgroundColor: themeStyles.inputBackground,
       color: themeStyles.text,
-      fontSize: '14px'
+      fontSize: '16px',
+      transition: 'border-color 0.3s, box-shadow 0.3s',
+      outline: 'none',
+      boxShadow: errors[field.name] ? '0 0 0 3px rgba(239, 68, 68, 0.1)' : 'none'
     };
 
     const errorStyle = {
@@ -252,32 +256,33 @@ function FormBuilder({ schema, onSubmit }) {
   return (
     <div style={{
       backgroundColor: themeStyles.cardBackground,
-      padding: '2rem',
-      borderRadius: '8px',
+      padding: '3rem',
+      borderRadius: '16px',
       border: `1px solid ${themeStyles.border}`,
-      maxWidth: '600px',
-      margin: '0 auto'
+      maxWidth: '700px',
+      margin: '0 auto',
+      boxShadow: '0 10px 25px rgba(0,0,0,0.1)'
     }}>
-      <div style={{ marginBottom: '2rem' }}>
-        <h2 style={{ margin: '0 0 0.5rem 0', color: themeStyles.text }}>
+      <div style={{ marginBottom: '3rem', textAlign: 'center' }}>
+        <h2 style={{ margin: '0 0 1rem 0', color: themeStyles.text, fontSize: '2rem', fontWeight: '600' }}>
           {currentStepData.title}
         </h2>
-        <div style={{ fontSize: '14px', opacity: 0.7 }}>
+        <div style={{ fontSize: '16px', opacity: 0.7, marginBottom: '1.5rem' }}>
           Step {currentStep + 1} of {schema.steps.length}
         </div>
         <div style={{
           width: '100%',
-          height: '4px',
+          height: '8px',
           backgroundColor: themeStyles.border,
-          borderRadius: '2px',
-          marginTop: '0.5rem'
+          borderRadius: '4px',
+          overflow: 'hidden'
         }}>
           <div style={{
             width: `${((currentStep + 1) / schema.steps.length) * 100}%`,
             height: '100%',
-            backgroundColor: themeStyles.primary,
-            borderRadius: '2px',
-            transition: 'width 0.3s'
+            background: `linear-gradient(90deg, ${themeStyles.primary}, ${themeStyles.secondary})`,
+            borderRadius: '4px',
+            transition: 'width 0.5s ease'
           }} />
         </div>
       </div>
@@ -288,7 +293,7 @@ function FormBuilder({ schema, onSubmit }) {
         <div style={{
           display: 'flex',
           justifyContent: 'space-between',
-          marginTop: '2rem',
+          marginTop: '3rem',
           gap: '1rem'
         }}>
           <button
@@ -296,13 +301,29 @@ function FormBuilder({ schema, onSubmit }) {
             onClick={handlePrevious}
             disabled={currentStep === 0}
             style={{
-              padding: '0.75rem 1.5rem',
+              padding: '1rem 2rem',
               backgroundColor: currentStep === 0 ? themeStyles.border : themeStyles.secondary,
               color: currentStep === 0 ? themeStyles.text : '#fff',
               border: 'none',
-              borderRadius: '4px',
+              borderRadius: '8px',
               cursor: currentStep === 0 ? 'not-allowed' : 'pointer',
-              fontSize: '14px'
+              fontSize: '16px',
+              fontWeight: '500',
+              transition: 'all 0.3s',
+              transform: currentStep === 0 ? 'none' : 'translateY(0)',
+              boxShadow: currentStep === 0 ? 'none' : '0 4px 12px rgba(0,0,0,0.15)'
+            }}
+            onMouseEnter={(e) => {
+              if (currentStep !== 0) {
+                e.target.style.transform = 'translateY(-2px)';
+                e.target.style.boxShadow = '0 6px 20px rgba(0,0,0,0.2)';
+              }
+            }}
+            onMouseLeave={(e) => {
+              if (currentStep !== 0) {
+                e.target.style.transform = 'translateY(0)';
+                e.target.style.boxShadow = '0 4px 12px rgba(0,0,0,0.15)';
+              }
             }}
           >
             Previous
@@ -313,32 +334,54 @@ function FormBuilder({ schema, onSubmit }) {
               type="button"
               onClick={handleSubmit}
               style={{
-                padding: '0.75rem 1.5rem',
-                backgroundColor: themeStyles.primary,
+                padding: '1rem 2rem',
+                background: `linear-gradient(135deg, ${themeStyles.primary}, ${themeStyles.secondary})`,
                 color: '#fff',
                 border: 'none',
-                borderRadius: '4px',
+                borderRadius: '8px',
                 cursor: 'pointer',
-                fontSize: '14px'
+                fontSize: '16px',
+                fontWeight: '600',
+                transition: 'all 0.3s',
+                boxShadow: '0 4px 12px rgba(0,0,0,0.15)'
+              }}
+              onMouseEnter={(e) => {
+                e.target.style.transform = 'translateY(-2px)';
+                e.target.style.boxShadow = '0 6px 20px rgba(0,0,0,0.2)';
+              }}
+              onMouseLeave={(e) => {
+                e.target.style.transform = 'translateY(0)';
+                e.target.style.boxShadow = '0 4px 12px rgba(0,0,0,0.15)';
               }}
             >
-              Submit
+              Submit Form
             </button>
           ) : (
             <button
               type="button"
               onClick={handleNext}
               style={{
-                padding: '0.75rem 1.5rem',
-                backgroundColor: themeStyles.primary,
+                padding: '1rem 2rem',
+                background: `linear-gradient(135deg, ${themeStyles.primary}, ${themeStyles.secondary})`,
                 color: '#fff',
                 border: 'none',
-                borderRadius: '4px',
+                borderRadius: '8px',
                 cursor: 'pointer',
-                fontSize: '14px'
+                fontSize: '16px',
+                fontWeight: '600',
+                transition: 'all 0.3s',
+                boxShadow: '0 4px 12px rgba(0,0,0,0.15)'
+              }}
+              onMouseEnter={(e) => {
+                e.target.style.transform = 'translateY(-2px)';
+                e.target.style.boxShadow = '0 6px 20px rgba(0,0,0,0.2)';
+              }}
+              onMouseLeave={(e) => {
+                e.target.style.transform = 'translateY(0)';
+                e.target.style.boxShadow = '0 4px 12px rgba(0,0,0,0.15)';
               }}
             >
-              Next
+              Next Step →
             </button>
           )}
         </div>
@@ -384,13 +427,15 @@ export function Level3_5() {
       {submittedData ? (
         <div style={{
           backgroundColor: themeStyles.cardBackground,
-          padding: '2rem',
-          borderRadius: '8px',
+          padding: '3rem',
+          borderRadius: '16px',
           border: `1px solid ${themeStyles.border}`,
-          maxWidth: '600px',
-          margin: '0 auto'
+          maxWidth: '700px',
+          margin: '0 auto',
+          boxShadow: '0 10px 25px rgba(0,0,0,0.1)',
+          textAlign: 'center'
         }}>
-          <h2 style={{ color: themeStyles.text, marginBottom: '1rem' }}>Form Submitted Successfully!</h2>
+          <h2 style={{ color: themeStyles.text, marginBottom: '2rem', fontSize: '2rem', fontWeight: '600' }}>🎉 Form Submitted Successfully!</h2>
           <pre style={{
             backgroundColor: themeStyles.background,
             padding: '1rem',
@@ -403,13 +448,25 @@ export function Level3_5() {
           <button
             onClick={() => setSubmittedData(null)}
             style={{
-              marginTop: '1rem',
-              padding: '0.5rem 1rem',
-              backgroundColor: themeStyles.primary,
+              marginTop: '2rem',
+              padding: '1rem 2rem',
+              background: `linear-gradient(135deg, ${themeStyles.primary}, ${themeStyles.secondary})`,
               color: '#fff',
               border: 'none',
-              borderRadius: '4px',
-              cursor: 'pointer'
+              borderRadius: '8px',
+              cursor: 'pointer',
+              fontSize: '16px',
+              fontWeight: '600',
+              transition: 'all 0.3s',
+              boxShadow: '0 4px 12px rgba(0,0,0,0.15)'
+            }}
+            onMouseEnter={(e) => {
+              e.target.style.transform = 'translateY(-2px)';
+              e.target.style.boxShadow = '0 6px 20px rgba(0,0,0,0.2)';
+            }}
+            onMouseLeave={(e) => {
+              e.target.style.transform = 'translateY(0)';
+              e.target.style.boxShadow = '0 4px 12px rgba(0,0,0,0.15)';
             }}
           >
             Reset Form
@@ -418,6 +475,26 @@ export function Level3_5() {
       ) : (
         <FormBuilder schema={formSchema} onSubmit={handleFormSubmit} />
       )}
+
+      <div style={{ textAlign: 'center', marginTop: '3rem' }}>
+        <Link 
+          to="/mini-project" 
+          style={{
+            padding: '1rem 2rem',
+            background: `linear-gradient(135deg, ${themeStyles.primary}, ${themeStyles.secondary})`,
+            color: '#fff',
+            textDecoration: 'none',
+            borderRadius: '8px',
+            display: 'inline-block',
+            fontSize: '16px',
+            fontWeight: '600',
+            boxShadow: '0 4px 12px rgba(0,0,0,0.15)',
+            transition: 'all 0.3s'
+          }}
+        >
+          Mini Project - Kanban Board →
+        </Link>
+      </div>
     </div>
   );
 }

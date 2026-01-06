@@ -8,12 +8,18 @@ const themes = {
     text: '#000000',
     primary: '#007bff',
     secondary: '#6c757d',
+    border: '#dee2e6',
+    cardBackground: '#f8f9fa',
+    inputBackground: '#ffffff'
   },
   dark: {
     background: '#1a1a2e',
     text: '#ffffff',
     primary: '#4dabf7',
     secondary: '#adb5bd',
+    border: '#495057',
+    cardBackground: '#16213e',
+    inputBackground: '#0f1419'
   }
 };
 
